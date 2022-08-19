@@ -234,7 +234,7 @@ set shiftwidth=4
 set expandtab
 
 "" Map leader to ,
-let mapleader=','
+let mapleader=' '
 
 "" Enable hidden buffers
 set hidden
@@ -267,10 +267,14 @@ set ruler
 set number
 
 let no_buffers_menu=1
+
+" Setting for gruvbox
+" (https://github.com/morhetz/gruvbox/wiki/Configuration#ggruvbox_contrast_dark)
 set background=dark
+let g:gruvbox_invert_selection = 0
 colorscheme gruvbox
 
-" Better command line completion 
+" Better command line completion
 set wildmenu
 
 " mouse support
@@ -295,7 +299,7 @@ else
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 
-  
+
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
@@ -303,7 +307,7 @@ else
       set term=xterm-256color
     endif
   endif
-  
+
 endif
 
 
@@ -436,6 +440,9 @@ set autoread
 "" Mappings
 "*****************************************************************************
 
+"" ESC to jj
+inoremap <silent> jj <ESC>
+
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
@@ -556,6 +563,14 @@ vnoremap K :m '<-2<CR>gv=gv
 
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
+
+"" Terminal key mappings
+tnoremap <Backspace> <C-h>
+tnoremap <C-j> <C-w>j
+tnoremap <C-k> <C-w>k
+tnoremap <C-l> <C-w>l
+tnoremap <C-h> <C-w>h
+
 
 "*****************************************************************************
 "" Custom configs
