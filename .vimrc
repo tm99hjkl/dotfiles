@@ -34,23 +34,59 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+"" NERDTree
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+
+
+"" for comment out: gcc
 Plug 'tpope/vim-commentary'
+
+
+"" Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
+
+
+"" airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
+
+
+"" grep in vim
 Plug 'vim-scripts/grep.vim'
+
+
+"" ?
 Plug 'vim-scripts/CSApprox'
+
+
+"" auto complite of (), {}, quotes, and so on
 Plug 'Raimondi/delimitMate'
+
+
+"" for overviewing the structure of the file
 Plug 'majutsushi/tagbar'
+
+
+"" check syntax asynchly and fix files, with LSP support
 Plug 'dense-analysis/ale'
+
+
+"" display indent lines
 Plug 'Yggdroot/indentLine'
+
+
+"" update vimrc based on vim-bootstrap
 Plug 'editor-bootstrap/vim-bootstrap-updater'
-Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
+
+
+"" colorscheme
 Plug 'morhetz/gruvbox'
 
+
+"" fuzzy finder
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -63,9 +99,11 @@ if exists('make')
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
+
 "" Vim-Session
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
+
 
 "" Snippets
 Plug 'SirVer/ultisnips'
@@ -271,7 +309,9 @@ let no_buffers_menu=1
 " Setting for gruvbox
 " (https://github.com/morhetz/gruvbox/wiki/Configuration#ggruvbox_contrast_dark)
 set background=dark
+let g:gruvbox_contrast_dark = 'soft'
 let g:gruvbox_invert_selection = 0
+" autocmd VimEnter * hi Normal ctermbg=none
 colorscheme gruvbox
 
 " Better command line completion
@@ -664,7 +704,7 @@ augroup END
 
 
 " haskell
-let g:haskell_conceal_wide = 1
+let g:haskell_conceal_wide = 0
 let g:haskell_multiline_strings = 1
 let g:necoghc_enable_detailed_browse = 1
 autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
@@ -681,7 +721,7 @@ let g:javascript_enable_domhtmlcss = 1
 " vim-javascript
 augroup vimrc-javascript
   autocmd!
-  autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
+  autocmd FileType javascript setl tabstop=2|setl shiftwidth=2|setl expandtab softtabstop=2
 augroup END
 
 
