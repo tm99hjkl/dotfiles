@@ -228,6 +228,9 @@ endif
 Plug 'derekwyatt/vim-scala'
 
 
+" SQL
+Plug 'mattn/vim-sqlfmt'
+
 " typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -609,7 +612,7 @@ tnoremap <Backspace> <C-h>
 tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-l> <C-w>l
-tnoremap <C-h> <C-w>h
+tnoremap <C-h> <BS>
 
 
 "*****************************************************************************
@@ -858,6 +861,13 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 
 " scala
+
+
+" SQL
+augroup vimrc-sql
+  autocmd!
+  autocmd FileType sql setl tabstop=2|setl shiftwidth=2|setl expandtab softtabstop=2
+augroup END
 
 
 " typescript
