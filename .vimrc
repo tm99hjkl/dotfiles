@@ -615,6 +615,14 @@ tnoremap <C-l> <C-w>l
 tnoremap <C-h> <BS>
 
 
+"" copy to clipboard when yank
+if system('uname -a | grep Microsoft') != ''
+  augroup myYank
+    autocmd!
+    autocmd TextYankPost * :call system('clip.exe', @")
+  augroup END
+endif
+"
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
@@ -868,6 +876,10 @@ augroup vimrc-sql
   autocmd!
   autocmd FileType sql setl tabstop=2|setl shiftwidth=2|setl expandtab softtabstop=2
 augroup END
+" SQL format setting
+let g:sqlfmt_program = "sqlformat --comma_first true -r -k upper -o %s -"
+" sqlfmt shorcut command
+nmap <buffer><leader>sf <Plug>(sqlfmt)
 
 
 " typescript
