@@ -429,7 +429,8 @@ let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
 " terminal emulation
-nnoremap <silent> <leader>sh :terminal<CR>
+set termwinsize=20x0
+nnoremap <silent> <leader>sh :bo terminal<CR>
 
 
 "*****************************************************************************
@@ -608,20 +609,19 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <Leader>o :.Gbrowse<CR>
 
 "" Terminal key mappings
-tnoremap <Backspace> <C-h>
+tnoremap <C-h> <C-w>h
 tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-l> <C-w>l
-tnoremap <C-h> <BS>
 
 
 "" copy to clipboard when yank
-if system('uname -a | grep Microsoft') != ''
+" if system('uname -a | grep Microsoft') != ''
   augroup myYank
     autocmd!
     autocmd TextYankPost * :call system('clip.exe', @")
   augroup END
-endif
+" endif
 "
 "*****************************************************************************
 "" Custom configs
@@ -719,6 +719,7 @@ let g:haskell_conceal_wide = 0
 let g:haskell_multiline_strings = 1
 let g:necoghc_enable_detailed_browse = 1
 autocmd Filetype haskell setlocal omnifunc=necoghc#omnifunc
+autocmd FileType haskell setl tabstop=2|setl shiftwidth=2|setl expandtab softtabstop=2
 
 
 " html
