@@ -609,7 +609,7 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <Leader>o :.Gbrowse<CR>
 
 "" Terminal key mappings
-tnoremap <C-h> <C-w>h
+tnoremap <C-h> <BS>
 tnoremap <C-j> <C-w>j
 tnoremap <C-k> <C-w>k
 tnoremap <C-l> <C-w>l
