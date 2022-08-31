@@ -8,6 +8,9 @@ case $- in
       *) return;;
 esac
 
+# setting for ble.sh
+[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -134,3 +137,7 @@ if [ -f '/home/tm/google-cloud-sdk/completion.bash.inc' ]; then . '/home/tm/goog
 
 
 export PATH="$PATH:~/.config/composer/vendor/bin"
+export GOOGLE_APPLICATION_CREDENTIALS="/home/tm/prog/meteor/meteor-admin/service-account.json"
+
+# setting for ble.sh
+[[ ${BLE_VERSION-} ]] && ble-attach
