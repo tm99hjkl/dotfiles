@@ -184,6 +184,9 @@ Plug 'c9s/perlomni.vim'
 Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
 Plug 'stephpy/vim-php-cs-fixer'
 
+" purescript
+"" PureScript Bundle
+Plug 'purescript-contrib/purescript-vim'
 
 " python
 "" Python Bundle
