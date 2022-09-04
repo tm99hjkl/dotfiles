@@ -109,6 +109,11 @@ Plug 'xolox/vim-session'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+
+"" language server protocol for vim
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
