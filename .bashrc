@@ -19,8 +19,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=4000
+HISTFILESIZE=8000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -141,3 +141,8 @@ export GOOGLE_APPLICATION_CREDENTIALS="/home/tm/prog/meteor/meteor-admin/service
 
 # setting for ble.sh
 [[ ${BLE_VERSION-} ]] && ble-attach
+
+
+# setting for rbenv
+eval "$(~/.rbenv/bin/rbenv init - bash)"
+. "$HOME/.cargo/env"
