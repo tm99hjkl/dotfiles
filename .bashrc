@@ -102,6 +102,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # tm aliases
 alias tm='cd /mnt/c/Users/takumi\ matsuura'
 alias sql='psql -U postgres -h localhost -d meteor'
+alias clip='clip.exe'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
