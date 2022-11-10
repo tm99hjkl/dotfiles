@@ -32,28 +32,32 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(javascript
+     php
+     haskell
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
+     agda
      emacs-lisp
-     ;; git
+     git
      helm
-     ;; lsp
-     ;; markdown
+     lsp
+     markdown
      multiple-cursors
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
-     treemacs)
+     org
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
+     spell-checking
+     syntax-checking
+     version-control
+     treemacs
+     k-framework)
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -64,7 +68,9 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      mozc
+                                      )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -359,7 +365,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
@@ -562,6 +568,43 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; for agda-input
+  (require 'agda-input)
+  (add-hook 'evil-insert-state-entry-hook (lambda () (set-input-method "Agda")))
+  (add-hook 'evil-insert-state-exit-hook (lambda () (set-input-method nil)))
+
+  ;; key mapping settings
+  ;; (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
+  (keyboard-translate ?\C-h ?\C-?)
+  (setq-default evil-escape-key-sequence "jk")
+
+  ;; Mozc settings
+  (set-language-environment "Japanese")
+  (setq default-input-method "japanese-mozc")
+  (setq mozc-candidate-style 'echo-area)
+
+  (defun mozc-start()
+    (interactive)
+    (set-cursor-color "blue")
+    (message "Mozc start")
+    (mozc-mode 1))
+
+  (defun mozc-end()
+    (interactive)
+    (set-cursor-color "gray")
+    (message "Mozc end")
+    (mozc-mode -1))
+
+  (bind-keys*
+   ("<henkan>" . mozc-start)
+   ("<muhenkan>" . mozc-end)
+
+   ;; (bind-keys :map mozc-mode-map
+   ;;            ("q" . mozc-end)
+   ;;            ("C-g" . mozc-end)
+   ;;            ("C-x h" . mark-whole-buffer)
+   ;;            ("C-x C-s" . save-buffer))
+   )
 )
 
 
@@ -580,7 +623,7 @@ This function is called at the very end of Spacemacs initialization."
  '(ansi-color-names-vector
    ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(custom-safe-themes
-   '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "1cae4424345f7fe5225724301ef1a793e610ae5a4e23c023076dc334a9eb940a" "51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138" "636b135e4b7c86ac41375da39ade929e2bd6439de8901f53f88fde7dd5ac3561" "60ada0ff6b91687f1a04cc17ad04119e59a7542644c7c59fc135909499400ab8" "ce4234c32262924c1d2f43e6b61312634938777071f1129c7cde3ebd4a3028da" "89d9dc6f4e9a024737fb8840259c5dd0a140fd440f5ed17b596be43a05d62e67" "afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef" "683b3fe1689da78a4e64d3ddfce90f2c19eb2d8ab1bab1738a63d8263119c3f4" "443e2c3c4dd44510f0ea8247b438e834188dc1c6fb80785d83ad3628eadf9294" "8d3ef5ff6273f2a552152c7febc40eabca26bae05bd12bc85062e2dc224cde9a" "aec7b55f2a13307a55517fdf08438863d694550565dee23181d2ebd973ebd6b8" "dc8285f7f4d86c0aebf1ea4b448842a6868553eded6f71d1de52f3dcbc960039" "e3daa8f18440301f3e54f2093fe15f4fe951986a8628e98dcd781efbec7a46f2" "2721b06afaf1769ef63f942bf3e977f208f517b187f2526f0e57c1bd4a000350" "467dc6fdebcf92f4d3e2a2016145ba15841987c71fbe675dcfe34ac47ffb9195" "49acd691c89118c0768c4fb9a333af33e3d2dca48e6f79787478757071d64e68" "631c52620e2953e744f2b56d102eae503017047fb43d65ce028e88ef5846ea3b" "be84a2e5c70f991051d4aaf0f049fa11c172e5d784727e0b525565bb1533ec78" "b99e334a4019a2caa71e1d6445fc346c6f074a05fcbb989800ecbe54474ae1b0" "1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00" "7a424478cb77a96af2c0f50cfb4e2a88647b3ccca225f8c650ed45b7f50d9525" "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "882d6a5981fd85d9f987d31623e25e69b8d5635a53ab442f1a51e7c252790320" "de385583975ed8e83b71b212b3094ee74785834718e2413bc3acff36224fba8d" "e223120256455daba01b6c68510b48fac813acab05c314510e47aea377b23634" "039112154ee5166278a7b65790c665fe17fd21c84356b7ad4b90c29ffe0ad606" "d3e76a24fbdb051ea1ac68c7e8483c8eaf15f15aa90fe38093924cf01f799bf7" "2902694c7ef5d2a757146f0a7ce67976c8d896ea0a61bd21d3259378add434c4" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "2f1157e7e30f85eb730a2d2c122b66491d48d32f6c92068970824d05b117ecad" "1cfbec19edafb831c7729be2f6454ec019c21b9a54b39b3bb5ec276a6b21d484" "dea106ab256a8017a325f51f01b1131915989fa25db48eb831ffb18dac8ecd39" default))
+   '("6945dadc749ac5cbd47012cad836f92aea9ebec9f504d32fe89a956260773ca4" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "1cae4424345f7fe5225724301ef1a793e610ae5a4e23c023076dc334a9eb940a" "51c71bb27bdab69b505d9bf71c99864051b37ac3de531d91fdad1598ad247138" "636b135e4b7c86ac41375da39ade929e2bd6439de8901f53f88fde7dd5ac3561" "60ada0ff6b91687f1a04cc17ad04119e59a7542644c7c59fc135909499400ab8" "ce4234c32262924c1d2f43e6b61312634938777071f1129c7cde3ebd4a3028da" "89d9dc6f4e9a024737fb8840259c5dd0a140fd440f5ed17b596be43a05d62e67" "afa47084cb0beb684281f480aa84dab7c9170b084423c7f87ba755b15f6776ef" "683b3fe1689da78a4e64d3ddfce90f2c19eb2d8ab1bab1738a63d8263119c3f4" "443e2c3c4dd44510f0ea8247b438e834188dc1c6fb80785d83ad3628eadf9294" "8d3ef5ff6273f2a552152c7febc40eabca26bae05bd12bc85062e2dc224cde9a" "aec7b55f2a13307a55517fdf08438863d694550565dee23181d2ebd973ebd6b8" "dc8285f7f4d86c0aebf1ea4b448842a6868553eded6f71d1de52f3dcbc960039" "e3daa8f18440301f3e54f2093fe15f4fe951986a8628e98dcd781efbec7a46f2" "2721b06afaf1769ef63f942bf3e977f208f517b187f2526f0e57c1bd4a000350" "467dc6fdebcf92f4d3e2a2016145ba15841987c71fbe675dcfe34ac47ffb9195" "49acd691c89118c0768c4fb9a333af33e3d2dca48e6f79787478757071d64e68" "631c52620e2953e744f2b56d102eae503017047fb43d65ce028e88ef5846ea3b" "be84a2e5c70f991051d4aaf0f049fa11c172e5d784727e0b525565bb1533ec78" "b99e334a4019a2caa71e1d6445fc346c6f074a05fcbb989800ecbe54474ae1b0" "1a1ac598737d0fcdc4dfab3af3d6f46ab2d5048b8e72bc22f50271fd6d393a00" "7a424478cb77a96af2c0f50cfb4e2a88647b3ccca225f8c650ed45b7f50d9525" "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "882d6a5981fd85d9f987d31623e25e69b8d5635a53ab442f1a51e7c252790320" "de385583975ed8e83b71b212b3094ee74785834718e2413bc3acff36224fba8d" "e223120256455daba01b6c68510b48fac813acab05c314510e47aea377b23634" "039112154ee5166278a7b65790c665fe17fd21c84356b7ad4b90c29ffe0ad606" "d3e76a24fbdb051ea1ac68c7e8483c8eaf15f15aa90fe38093924cf01f799bf7" "2902694c7ef5d2a757146f0a7ce67976c8d896ea0a61bd21d3259378add434c4" "830877f4aab227556548dc0a28bf395d0abe0e3a0ab95455731c9ea5ab5fe4e1" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "2f1157e7e30f85eb730a2d2c122b66491d48d32f6c92068970824d05b117ecad" "1cfbec19edafb831c7729be2f6454ec019c21b9a54b39b3bb5ec276a6b21d484" "dea106ab256a8017a325f51f01b1131915989fa25db48eb831ffb18dac8ecd39" default))
  '(evil-want-Y-yank-to-eol nil)
  '(helm-completion-style 'helm-fuzzy)
  '(hl-todo-keyword-faces
@@ -603,7 +646,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-fontify-done-headline nil)
  '(org-fontify-todo-headline nil)
  '(package-selected-packages
-   '(doom-themes solarized-theme base16-theme gruvbox-theme magit ghub ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
+   '(add-node-modules-path grizzl js-doc js2-mode nodejs-repl npm-mode prettier-js simple-httpd tern web-beautify company-php ac-php-core xcscope company-phpactor counsel-gtags counsel swiper ivy dap-mode lsp-docker bui drupal-mode geben ggtags helm-gtags php-auto-yasnippets php-extras php-mode phpactor composer php-runtime phpcbf phpunit org org-download org-mime org-pomodoro alert log4e gntp org-present org-projectile org-category-capture org-rich-yank smeargle git-commit with-editor transient dash unfill ac-ispell auto-complete auto-yasnippet fuzzy helm-c-yasnippet helm-company company yasnippet-snippets yasnippet doom-themes solarized-theme base16-theme gruvbox-theme magit ghub ws-butler writeroom-mode winum which-key volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org term-cursor symon symbol-overlay string-inflection string-edit spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline-all-the-icons space-doc restart-emacs request rainbow-delimiters quickrun popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless multi-line macrostep lorem-ipsum link-hint inspector info+ indent-guide hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -612,3 +655,4 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
+

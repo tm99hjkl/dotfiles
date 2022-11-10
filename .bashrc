@@ -103,6 +103,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias tm='cd /mnt/c/Users/takumi\ matsuura'
 alias sql='psql -U postgres -h localhost -d meteor'
 alias clip='clip.exe'
+alias deln="cat | sed -z 's/\n/ /g' | clip"
+alias fix_clock="sudo hwclock --hctosys"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -147,3 +149,8 @@ export GOOGLE_APPLICATION_CREDENTIALS="/home/tm/prog/meteor/meteor-admin/service
 # setting for rbenv
 eval "$(~/.rbenv/bin/rbenv init - bash)"
 . "$HOME/.cargo/env"
+
+# setting for nix
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
+    . $HOME/.nix-profile/etc/profile.d/nix.sh;
+fi
