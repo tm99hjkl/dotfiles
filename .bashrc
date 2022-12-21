@@ -91,9 +91,10 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='exa'
+alias ll='exa -alF'
+alias la='exa -a'
+alias l='exa'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -104,6 +105,7 @@ alias tm='cd /mnt/c/Users/takumi\ matsuura'
 alias sql='psql -U postgres -h localhost -d meteor'
 alias clip='clip.exe'
 alias deln="cat | sed -z 's/\n/ /g' | clip"
+alias dels="cat | sed -z 's/ *\/\/\///g' | deln"
 alias fix_clock="sudo hwclock --hctosys"
 
 # Alias definitions.
