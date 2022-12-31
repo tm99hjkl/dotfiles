@@ -32,6 +32,13 @@ alias clip='clip.exe'
 alias deln="cat | sed -z 's/\n/ /g' | clip"
 alias dels="cat | sed -z 's/ *\/\/\///g' | deln"
 alias fix_clock='sudo hwclock --hctosys'
-alias haskell='cd ~/work/my-misc-lib/haskell'
-alias k='cd ~/work/my-misc-lib/k'
 alias lg='lazygit'
+
+function goto_langs_dir {
+    dir="~/work/my-misc-lib/"
+    languages="commands ethereum haskell html k php rust sh solidity"
+    for lang in $languages; do
+        alias "$lang"_dir="cd $dir$lang"
+    done
+}
+goto_langs_dir
