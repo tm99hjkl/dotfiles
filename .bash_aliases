@@ -25,7 +25,6 @@ alias l='exa'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# tm aliases
 alias tm='cd /mnt/c/Users/takumi\ matsuura'
 alias sql='psql -U postgres -h localhost -d meteor'
 alias clip='clip.exe'
@@ -33,10 +32,11 @@ alias deln="cat | sed -z 's/\n/ /g' | clip"
 alias dels="cat | sed -z 's/ *\/\/\///g' | deln"
 alias fix_clock='sudo hwclock --hctosys'
 alias lg='lazygit'
+alias py3='python3'
 
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
-    languages="commands ethereum haskell html k php rust sh solidity"
+    languages="c commands ethereum haskell html k php python rust sh solidity"
     for lang in $languages; do
         alias "$lang"_dir="cd $dir$lang"
     done
