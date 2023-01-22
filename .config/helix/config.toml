@@ -1,8 +1,11 @@
-theme = "base16_transparent"
+theme = "catppuccin_frappe"
 
 [editor]
+true-color = true
 mouse = false
 cursorline = true
+rulers = [80]
+bufferline = "always"
 
 [editor.cursor-shape]
 insert = "bar"
