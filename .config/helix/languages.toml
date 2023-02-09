@@ -1,3 +1,10 @@
 [[language]]
 name = "rust"
-auto-formant = true
+auto-format = true
+
+[[language]]
+name = "k"
+scope = "source.k"
+file-types = ["k"]
+roots = []
+comment-token = "//"

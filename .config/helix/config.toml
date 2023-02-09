@@ -29,6 +29,9 @@ A-q = ":bp"
 A-w = ":bn"
 A-c = ":bc"
 
-
 [keys.insert]
 j = {k = "normal_mode"}
+A-q = ":bp"
+A-w = ":bn"
+A-c = ":bc"
+
