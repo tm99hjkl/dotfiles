@@ -33,10 +33,11 @@ alias dels="cat | sed -z 's/ *\/\/\///g' | deln"
 alias fix_clock='sudo hwclock --hctosys'
 alias lg='lazygit'
 alias py3='python3'
+alias red='~/opt/red'
 
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
-    languages="c commands ethereum haskell html k php python rust sh solidity"
+    languages="c commands ethereum haskell html k php python red rust sh solidity"
     for lang in $languages; do
         alias "$lang"_dir="cd $dir$lang"
     done

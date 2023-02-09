@@ -20,7 +20,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
-HISTFILESIZE=10000
+HISTFILESIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -122,3 +122,9 @@ eval "$(~/.rbenv/bin/rbenv init - bash)"
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
     . $HOME/.nix-profile/etc/profile.d/nix.sh;
 fi
+
+# setting for red
+export PATH="$PATH:~/opt"
+
+cd
+clear
