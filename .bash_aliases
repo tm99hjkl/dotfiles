@@ -25,6 +25,9 @@ alias l='exa'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias e='explorer.exe'
+alias aliases='hx ~/.bash_aliases'
+alias hxrc='hx ~/.config/helix/config.toml'
 alias tm='cd /mnt/c/Users/takumi\ matsuura'
 alias sql='psql -U postgres -h localhost -d meteor'
 alias clip='clip.exe'
