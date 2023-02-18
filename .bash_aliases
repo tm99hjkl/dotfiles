@@ -37,6 +37,7 @@ alias fix_clock='sudo hwclock --hctosys'
 alias lg='lazygit'
 alias py3='python3'
 alias red='~/opt/red'
+alias rsi='evcxr'
 
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
