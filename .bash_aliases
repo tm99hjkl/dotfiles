@@ -38,10 +38,11 @@ alias lg='lazygit'
 alias py3='python3'
 alias red='~/opt/red'
 alias rsi='evcxr'
+alias sbcl='rlwrap sbcl'
 
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
-    languages="c commands ethereum haskell html k php python red rust sh solidity"
+    languages="c commands ethereum haskell html k lisp php python red rust sh solidity"
     for lang in $languages; do
         alias "$lang"_dir="cd $dir$lang"
     done
