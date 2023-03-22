@@ -39,6 +39,7 @@ alias py3='python3'
 alias red='~/opt/red'
 alias rsi='evcxr'
 alias sbcl='rlwrap sbcl'
+alias pc='echo -n $(pwd) | clip'
 
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
