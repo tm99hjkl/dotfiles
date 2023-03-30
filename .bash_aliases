@@ -40,7 +40,7 @@ alias red='~/opt/red'
 alias rsi='evcxr'
 alias sbcl='rlwrap sbcl'
 alias pc='echo -n $(pwd) | clip'
-
+alias v='nvim'
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
     languages="c commands ethereum haskell html k lisp php python red rust sh solidity"
