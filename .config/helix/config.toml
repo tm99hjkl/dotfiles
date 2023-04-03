@@ -20,6 +20,12 @@ render = true
 character = "▏"
 skip-levels = 1
 
+[editor.soft-wrap]
+enable = true
+
+[editor.lsp]
+display-inlay-hints = true
+
 [keys.normal]
 C-h = "jump_view_left"
 C-j = "jump_view_down"
