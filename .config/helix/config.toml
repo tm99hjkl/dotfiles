@@ -24,7 +24,7 @@ skip-levels = 1
 enable = true
 
 [editor.lsp]
-display-inlay-hints = true
+# display-inlay-hints = true
 
 [keys.normal]
 C-h = "jump_view_left"
