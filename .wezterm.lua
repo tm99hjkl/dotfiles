@@ -12,6 +12,8 @@ return {
   },
   font = wezterm.font("Source Code Pro", { weight = 400, stretch = "Normal", italic = false }),
   font_size = 10,
+
+  -- Activate Pane Direction
   keys = {
     {
       key = 'h',
@@ -32,6 +34,28 @@ return {
       key = 'j',
       mods = 'ALT',
       action = act.ActivatePaneDirection 'Down',
+    },
+
+  -- Adjust Pane Size
+    {
+      key = 'h',
+      mods = 'ALT|CTRL',
+      action = act.AdjustPaneSize { 'Left', 1 }
+    },
+    {
+      key = 'j',
+      mods = 'ALT|CTRL',
+      action = act.AdjustPaneSize { 'Down', 1 }
+    },
+    {
+      key = 'k',
+      mods = 'ALT|CTRL',
+      action = act.AdjustPaneSize { 'Up', 1 }
+    },
+    {
+      key = 'l',
+      mods = 'ALT|CTRL',
+      action = act.AdjustPaneSize { 'Right', 1 }
     },
   }
 }
