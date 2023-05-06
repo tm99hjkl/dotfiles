@@ -42,6 +42,7 @@ alias sbcl='rlwrap sbcl'
 alias pc='echo -n $(pwd) | clip'
 alias v='nvim'
 alias mapn="sed 's/\(.\)/\1\n/g'"
+alias bat="bat -p"
 
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
