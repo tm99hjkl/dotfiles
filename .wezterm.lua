@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 return {
-  color_scheme = "Catppuccin Mocha",
+  color_scheme = "Gruvbox dark, hard (base16)",
   default_prog = { "wsl.exe" },
   window_background_opacity = 0.9,
   window_padding = {
