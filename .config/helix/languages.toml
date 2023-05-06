@@ -3,13 +3,6 @@ name = "rust"
 auto-format = true
 
 [[language]]
-name = "k"
-scope = "source.k"
-file-types = ["k"]
-roots = []
-comment-token = "//"
-
-[[language]]
 name = "bash"
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
