@@ -1,11 +1,9 @@
 theme = "sonokai"
 
 [editor]
-true-color = true
-mouse = false
-cursorline = true
 rulers = [80]
 bufferline = "always"
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -17,14 +15,11 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-character = "▏"
+character = "╎"
 skip-levels = 1
 
 [editor.soft-wrap]
 enable = true
-
-[editor.lsp]
-# display-inlay-hints = true
 
 [keys.normal]
 C-h = "jump_view_left"
