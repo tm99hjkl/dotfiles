@@ -9,7 +9,7 @@ case $- in
 esac
 
 # setting for ble.sh
-[[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach --inputrc=none
+# [[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach --inputrc=none
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -134,3 +134,7 @@ export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 export PATH="$HOME/opt/nvim/bin:$HOME/opt/bin:$PATH"
 # export PYTHONSTARTUP=~/.pythonrc.py
+
+# disable stopping terminal with ctrl-s
+stty stop undef
+stty start undef
