@@ -1,4 +1,4 @@
-theme = "sonokai"
+theme = "nord"
 
 [editor]
 rulers = [80]
@@ -15,7 +15,7 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-character = "╎"
+character = " "
 skip-levels = 1
 
 [editor.soft-wrap]
