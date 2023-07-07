@@ -4,9 +4,8 @@
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -43,10 +42,11 @@ alias pc='echo -n $(pwd) | clip'
 alias v='nvim'
 alias mapn="sed 's/\(.\)/\1\n/g'"
 alias bat="bat -p"
+alias snip="cd ~/work/my-misc-lib/"
 
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
-    languages="c commands ethereum haskell html k lisp php python red rust sh solidity"
+    languages="c commands ethereum haskell html k lisp php python red rust sh solidity sage"
     for lang in $languages; do
         alias "$lang"_dir="cd $dir$lang"
     done
