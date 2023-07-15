@@ -135,6 +135,10 @@ export PATH="$HOME/gems/bin:$PATH"
 export PATH="$HOME/opt/nvim/bin:$HOME/opt/bin:$PATH"
 # export PYTHONSTARTUP=~/.pythonrc.py
 
+# Go
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:"$HOME/go/bin"
+
 # disable stopping terminal with ctrl-s
 stty stop undef
 stty start undef
