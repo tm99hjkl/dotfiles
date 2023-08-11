@@ -142,3 +142,5 @@ export PATH=$PATH:"$HOME/go/bin"
 # disable stopping terminal with ctrl-s
 stty stop undef
 stty start undef
+
+export LESS='-R'
