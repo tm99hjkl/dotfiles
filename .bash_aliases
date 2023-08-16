@@ -42,7 +42,8 @@ alias pc='echo -n $(pwd) | clip'
 alias v='nvim'
 alias mapn="sed 's/\(.\)/\1\n/g'"
 alias bat="bat -p --theme=Nord"
-alias snip="cd ~/work/my-misc-lib/"
+alias objdump="objdump --visualize-jumps=color"
+# alias snip="cd ~/work/my-misc-lib/"
 
 function goto_langs_dir {
     dir="~/work/my-misc-lib/"
