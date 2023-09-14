@@ -143,4 +143,8 @@ export PATH=$PATH:"$HOME/go/bin"
 stty stop undef
 stty start undef
 
+# not to erase the /slash/delimited/string at once on the command line
+stty werase undef
+bind '\C-w:unix-filename-rubout'
+
 export LESS='-R'
