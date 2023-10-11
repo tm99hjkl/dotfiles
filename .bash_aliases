@@ -23,33 +23,20 @@ alias l='exa'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-alias e='explorer.exe'
-alias aliases='hx ~/.bash_aliases'
-alias hxrc='hx ~/.config/helix/config.toml'
-alias tm='cd /mnt/c/Users/takumi\ matsuura'
-alias sql='psql -U postgres -h localhost -d meteor'
+alias aliases='hx ~/.bash_aliases; cd ~/dotfiles'
+alias bat="bat -p --theme=Nord"
 alias clip='clip.exe'
 alias deln="cat | sed -z 's/\n/ /g' | clip"
 alias dels="cat | sed -z 's/ *\/\/\///g' | deln"
+alias e='explorer.exe'
 alias fix_clock='sudo hwclock --hctosys'
+alias hxrc='hx ~/.config/helix/config.toml'
 alias lg='lazygit'
-alias py3='python3'
-alias red='~/opt/red'
-alias rsi='evcxr'
-alias sbcl='rlwrap sbcl'
-alias pc='echo -n $(pwd) | clip'
-alias v='nvim'
-alias mapn="sed 's/\(.\)/\1\n/g'"
-alias bat="bat -p --theme=Nord"
 alias objdump="objdump --visualize-jumps=color"
+alias pc='echo -n $(pwd) | clip'
+alias py3='python3'
+alias sbcl='rlwrap sbcl'
 alias snip="cd ~/ghq/github.com/tm99hjkl/snip"
+alias tm='cd /mnt/c/Users/takumi\ matsuura'
+alias today='TZ=Asia/Tokyo date +"%Y-%m-%d"'
 
-function goto_langs_dir {
-    dir="~/work/my-misc-lib/"
-    languages="c commands ethereum haskell html k lisp php python red rust sh solidity sage"
-    for lang in $languages; do
-        alias "$lang"_dir="cd $dir$lang"
-    done
-}
-goto_langs_dir
