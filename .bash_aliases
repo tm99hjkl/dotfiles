@@ -37,6 +37,10 @@ alias pc='echo -n $(pwd) | clip'
 alias py3='python3'
 alias sbcl='rlwrap sbcl'
 alias snip="cd ~/ghq/github.com/tm99hjkl/snip"
+alias t='tree -d -L 1'
 alias tm='cd /mnt/c/Users/takumi\ matsuura'
-alias today='TZ=Asia/Tokyo date +"%Y-%m-%d"'
+alias today="TZ=Asia/Tokyo date +\"%Y-%m-%d\" | tr -d '\n'"
+alias tt='tree -d -L 2'
+alias ttt='tree -d -L 3'
+
 
