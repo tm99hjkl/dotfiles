@@ -29,6 +29,7 @@ alias clip='clip.exe'
 alias deln="cat | sed -z 's/\n/ /g' | clip"
 alias dels="cat | sed -z 's/ *\/\/\///g' | deln"
 alias e='explorer.exe'
+alias emacs='emacs -nw'
 alias fix_clock='sudo hwclock --hctosys'
 alias hxrc='hx ~/.config/helix/config.toml'
 alias lg='lazygit'
@@ -38,6 +39,7 @@ alias py3='python3'
 alias sbcl='rlwrap sbcl'
 alias snip="cd ~/ghq/github.com/tm99hjkl/snip"
 alias t='tree -d -L 1'
+alias tc="TZ=Asia/Tokyo date +\"%Y-%m-%d\" | tr -d '\n' | clip"
 alias tm='cd /mnt/c/Users/takumi\ matsuura'
 alias today="TZ=Asia/Tokyo date +\"%Y-%m-%d\" | tr -d '\n'"
 alias tt='tree -d -L 2'
