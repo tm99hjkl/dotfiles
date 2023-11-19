@@ -4,6 +4,7 @@ theme = "nord"
 rulers = [80]
 bufferline = "always"
 color-modes = true
+line-number = "relative"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -15,8 +16,9 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-character = " "
-skip-levels = 1
+# character = " "
+character = "╎"
+skip-levels = 0
 
 [editor.soft-wrap]
 enable = true
@@ -35,6 +37,13 @@ A-c = ":bc"
 
 [keys.insert]
 j = {k = "normal_mode"}
+C-f = "move_char_right"
+C-b = "move_char_left"
+C-a = "goto_line_start"
+C-e = "goto_line_end"
+C-n = "move_visual_line_down"
+C-p = "move_visual_line_up"
+
 A-q = ":bp"
 A-w = ":bn"
 A-c = ":bc"
