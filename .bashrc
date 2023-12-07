@@ -147,4 +147,8 @@ stty start undef
 stty werase undef
 bind '\C-w:unix-filename-rubout'
 
+# less
 export LESS='-R'
+
+# man
+export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=Nord'"
