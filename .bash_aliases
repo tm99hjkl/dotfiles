@@ -32,6 +32,7 @@ alias e='explorer.exe'
 alias emacs='emacs -nw'
 alias fix_clock='sudo hwclock --hctosys'
 alias hxrc='hx ~/.config/helix/config.toml'
+alias idi='fzf --height=40 --preview='\''bat {} -p --color always --theme=Nord'\'' --bind '\''enter:execute-silent(cat {} | clip.exe && echo done)'\'''
 alias lg='lazygit'
 alias objdump="objdump --visualize-jumps=color"
 alias pc='echo -n $(pwd) | clip'
