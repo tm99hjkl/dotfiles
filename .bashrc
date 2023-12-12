@@ -152,3 +152,6 @@ export LESS='-R'
 
 # man
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=Nord'"
+
+# z
+. $HOME/ghq/github.com/rupa/z/z.sh
