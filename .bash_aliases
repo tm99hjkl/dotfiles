@@ -25,14 +25,14 @@ alias l='exa'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias aliases='hx ~/.bash_aliases; cd ~/dotfiles'
 alias bat="bat -p --theme=Nord"
-alias clip='clip.exe'
+alias clip='xsel -bi'
 alias deln="cat | sed -z 's/\n/ /g' | clip"
 alias dels="cat | sed -z 's/ *\/\/\///g' | deln"
 alias e='explorer.exe'
 alias emacs='emacs -nw'
+alias f='fzf --height=40 --preview='\''bat {} -p --color always --theme=Nord'\'' --bind '\''enter:execute-silent(cat {} | xsel -bi && echo done)'\'''
 alias fix_clock='sudo hwclock --hctosys'
 alias hxrc='hx ~/.config/helix/config.toml'
-alias idi='fzf --height=40 --preview='\''bat {} -p --color always --theme=Nord'\'' --bind '\''enter:execute-silent(cat {} | clip.exe && echo done)'\'''
 alias lg='lazygit'
 alias objdump="objdump --visualize-jumps=color"
 alias pc='echo -n $(pwd) | clip'
