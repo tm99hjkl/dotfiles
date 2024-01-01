@@ -1,8 +1,14 @@
 [[language]]
-name = "rust"
-auto-format = true
+name = "c"
+indent = { tab-width = 8, unit = "        "}
+language-servers = []
 
 [[language]]
 name = "bash"
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+
