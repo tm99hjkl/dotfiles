@@ -30,7 +30,7 @@ alias deln="cat | sed -z 's/\n/ /g' | clip"
 alias dels="cat | sed -z 's/ *\/\/\///g' | deln"
 alias e='explorer.exe'
 alias emacs='emacs -nw'
-alias f='fzf --height=40 --preview='\''bat {} -p --color always --theme=Nord'\'' --bind '\''enter:execute-silent(cat {} | xsel -bi && echo done)'\'''
+alias f='fzf --cycle --height=40 --preview='\''bat {} -p --color always --theme=Nord'\'' --bind '\''enter:execute-silent(cat {} | xsel -bi && echo done)'\'' --bind '\''ctrl-d:execute(rm -i {})'\'''
 alias fix_clock='sudo hwclock --hctosys'
 alias hxrc='hx ~/.config/helix/config.toml'
 alias lg='lazygit'
