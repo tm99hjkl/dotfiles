@@ -45,5 +45,4 @@ alias tm='cd /mnt/c/Users/takumi\ matsuura'
 alias today="TZ=Asia/Tokyo date +\"%Y-%m-%d\" | tr -d '\n'"
 alias tt='tree -d -L 2'
 alias ttt='tree -d -L 3'
-
-
+alias unc="cat | sed -z -e 's:[\/ ]\* ::g; s: \*\/::g; s:\n: :g' | clip"
