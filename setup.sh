@@ -31,7 +31,7 @@ install_go() {
 }
 
 install_ghq() {
-	go isntall github.com/x-motemen/ghq@latest
+	go install github.com/x-motemen/ghq@latest
 }
 
 install_lg() {
