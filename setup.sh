@@ -18,16 +18,21 @@ WILL_BE_INSTALLED=(
 # helper functions
 #
 install_curl() {
-	sudo apt install curl
+	sudo apt install -y curl
 }
 
 install_git() {
-	sudo apt install git
+	sudo apt install -y git
 }
 
 install_go() {
 	curl -LO https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
 	sudo tar -C /usr/local -xzf go1.21.0.linux-amd64.tar.gz
+	if ! [[ $PATH = */usr/local/go/bin* ]]; then
+		echo '# go' >> ~/.bashrc
+		echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+		echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
+	fi
 }
 
 install_ghq() {
@@ -47,21 +52,22 @@ install_cargo() {
 
 install_hx() {
 	sudo add-apt-repository ppa:maveonair/helix-editor
-	sudo apt install helix
+	sudo apt install -y helix
 }
 
 install_bat() {
-	sudo apt install bat
+	sudo apt install -y bat
 	ln -s /usr/bin/batcat /usr/bin/bat
 }
 
 install_fd() {
-	sudo apt install fd-find
+	sudo apt install -y fd-find
 	ln -s /usr/bin/fdfind /usr/bin/fd
 }
 
 install_rg() {
-	cargo install ripgrep
+	sudo apt install -y ripgrep
+	ln -s /usr/bin/ripgrep /usr/bin/rg
 }
 
 check_and_install() {	
