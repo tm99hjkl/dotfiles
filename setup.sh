@@ -12,6 +12,7 @@ WILL_BE_INSTALLED=(
 	bat
 	fd
 	rg
+	z
 )	
 
 #
@@ -33,10 +34,12 @@ install_go() {
 		echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 		echo 'export PATH=$PATH:$HOME/go/bin' >> ~/.bashrc
 	fi
+	source "$HOME/.bashrc"
 }
 
 install_ghq() {
 	go install github.com/x-motemen/ghq@latest
+	ghq get https://github.com/tm99hjkl/dotfiles
 }
 
 install_lg() {
@@ -53,25 +56,35 @@ install_cargo() {
 install_hx() {
 	sudo add-apt-repository ppa:maveonair/helix-editor
 	sudo apt install -y helix
+	mkdir -p $HOME/.config/helix
+	sudo ln -s `ghq root`/github.com/tm99hjkl/dotfiles/.config/helix/config.toml $HOME/.config/helix/config.toml
+	sudo ln -s `ghq root`/github.com/tm99hjkl/dotfiles/.config/helix/languages.toml $HOME/.config/helix/languages.toml
 }
 
 install_bat() {
 	sudo apt install -y bat
-	ln -s /usr/bin/batcat /usr/bin/bat
+	sudo ln -s /usr/bin/batcat /usr/bin/bat
 }
 
 install_fd() {
 	sudo apt install -y fd-find
-	ln -s /usr/bin/fdfind /usr/bin/fd
+	sudo ln -s /usr/bin/fdfind /usr/bin/fd
 }
 
 install_rg() {
 	sudo apt install -y ripgrep
-	ln -s /usr/bin/ripgrep /usr/bin/rg
+	sudo ln -s /usr/bin/ripgrep /usr/bin/rg
+}
+
+install_z() {
+	ghq get https://github.com/rupa/z
+	echo '# z' >> ~/.bashrc
+	echo ". $HOME/ghq/github.com/rupa/z/z.sh" >> ~/.bashrc
+	source $HOME/.bashrc
 }
 
 check_and_install() {	
-	[[ -z `command -v $1` ]] && echo "[+] Starting install $1..." && install_$1
+	[[ -z `command -v $1` ]] && echo "[+] Starting install $1..." && install_$1 1>/dev/null
 }
 
 #
