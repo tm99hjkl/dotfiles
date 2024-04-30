@@ -3,6 +3,7 @@ set -eo pipefail
 
 WILL_BE_INSTALLED=(
     curl
+    cloc
     bat
     fd
     rg
@@ -17,6 +18,10 @@ is_installed() {
 
 install_curl() {
     sudo apt install -y curl
+}
+
+install_cloc() {
+    sudo apt install -y cloc
 }
 
 install_bat() {
