@@ -1,0 +1,82 @@
+"attribute" = "#ffffff"
+"type" = { "fg"= "#00ff00", modifiers = ["bold"] }
+"constructor" = "#ffffff"
+"constant" = "#ffffff"
+"string" = "#ffffff"
+"comment" = "#00ffff"
+"variable" = "#ffffff"
+"label" = "#ffffff"
+"punctuation" = "#ffd700"
+"keyword" = { fg = "#98fb98", modifiers = ["bold"] }
+"operator" = "#ffffff"
+"function" = { fg = "#ffffff", modifiers = ["bold"] }
+"function.builtin" = { fg = "#98fb98", modifiers = ["bold"] }
+"tag" = "#ffffff"
+"namespace" = "#ffffff"
+"special" = "#ffffff"
+"markup" = "#ffffff"
+"diff" = "#ffffff"
+"ui.background" = { fg = "#ffffff", bg = "#000000" }
+"ui.background.separator" = "#ffffff"
+"ui.cursor" = { fg = "#ffffff", modifiers = ["reversed"] }
+# "ui.cursor.normal" =
+# "ui.cursor.insert" =
+# "ui.cursor.select" =
+"ui.cursor.match" = { fg = "#666666", modifiers = ["reversed"]}
+# "ui.cursor.primary" =
+# "ui.cursor.primary.normal" =
+# "ui.cursor.primary.insert" =
+# "ui.cursor.primary.select" =
+# "ui.debug.breakpoint" =
+# "ui.debug.active" =
+# "ui.gutter" =
+# "ui.gutter.selected" =
+# "ui.highlight.frameline" =
+"ui.linenr" = "#777777"
+"ui.linenr.selected" = "#ffffff"
+"ui.statusline" = { fg = "#ffffff", bg = "#222222" }
+"ui.statusline.inactive" = { fg = "#777777", bg = "#222222" }
+# "ui.statusline.normal" =
+# "ui.statusline.insert" =
+# "ui.statusline.select" =
+# "ui.statusline.separator" =
+# "ui.bufferline" =
+# "ui.bufferline.active" =
+# "ui.bufferline.background" =
+"ui.popup" = { fg = "#ffffff", bg = "#222222" }
+"ui.popup.info" = { fg = "#ffffff", bg = "#222222"}
+"ui.window" = "#ffffff"
+"ui.help" = { fg = "#ffffff", bg = "#222222" }
+"ui.text" = "#ffffff"
+"ui.text.focus" = { bg = "#444444" }
+"ui.text.inactive" = { fg = "#aaaaaa", bg = "#000000" }
+"ui.text.info" = { fg = "#ffffff", bg = "#222222" }
+"ui.virtual.ruler" = { bg = "#000000"}
+# "ui.virtual.whitespace" =
+# "ui.virtual.indent-guide" =
+# "ui.virtual.inlay-hint" =
+# "ui.virtual.inlay-hint.parameter" =
+# "ui.virtual.inlay-hint.type" =
+# "ui.virtual.wrap" =
+# "ui.virtual.jump-label" =
+"ui.menu" = { fg = "#ffffff", bg = "#222222" }
+"ui.menu.selected" = { fg = "#ffffff", bg = "#444444" }
+# "ui.menu.scroll" =
+"ui.selection" = { bg = "#444444" }
+# "ui.selection.primary" =
+"ui.highlight" = { bg = "#222222" }
+# "ui.cursorline.primary" =
+# "ui.cursorline.secondary" =
+# "ui.cursorcolumn.primary" =
+# "ui.cursorcolumn.secondary" =
+# "warning" =
+# "error" =
+# "info" =
+# "hint" =
+"diagnostic" = { bg = "#000000", modifiers = ["underlined"] }
+# "diagnostic.hint" =
+# "diagnostic.info" =
+# "diagnostic.warning" =
+# "diagnostic.error" =
+# "diagnostic.unnecessary" =
+# "diagnostic.deprecated" =
