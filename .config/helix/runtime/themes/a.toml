@@ -1,16 +1,19 @@
 "attribute" = "#ffffff"
-"type" = { "fg"= "#00ff00", modifiers = ["bold"] }
+"type" = { "fg"= "#ffffff", modifiers = ["bold"] }
 "constructor" = "#ffffff"
 "constant" = "#ffffff"
-"string" = "#ffffff"
+"string" = "#aaaaaa"
 "comment" = "#00ffff"
+# "comment" = "#9999ff"
 "variable" = "#ffffff"
 "label" = "#ffffff"
-"punctuation" = "#ffd700"
-"keyword" = { fg = "#98fb98", modifiers = ["bold"] }
+"punctuation" = { "fg" = "sym", modifiers = [] }
+# "punctuation" = "#ffffff"
+"keyword" = { fg = "kwd", modifiers = ["bold"] }
+# "keyword" = { fg = "#00bfff", modifiers = ["bold"] }
 "operator" = "#ffffff"
 "function" = { fg = "#ffffff", modifiers = ["bold"] }
-"function.builtin" = { fg = "#98fb98", modifiers = ["bold"] }
+"function.builtin" = { fg = "kwd", modifiers = ["bold"] }
 "tag" = "#ffffff"
 "namespace" = "#ffffff"
 "special" = "#ffffff"
@@ -57,7 +60,7 @@
 # "ui.virtual.inlay-hint" =
 # "ui.virtual.inlay-hint.parameter" =
 # "ui.virtual.inlay-hint.type" =
-# "ui.virtual.wrap" =
+"ui.virtual.wrap" = "#777777"
 # "ui.virtual.jump-label" =
 "ui.menu" = { fg = "#ffffff", bg = "#222222" }
 "ui.menu.selected" = { fg = "#ffffff", bg = "#444444" }
@@ -80,3 +83,7 @@
 # "diagnostic.error" =
 # "diagnostic.unnecessary" =
 # "diagnostic.deprecated" =
+
+[palette]
+sym = "#ffd700"
+kwd = "#98fb98"
