@@ -4,7 +4,9 @@ local act = wezterm.action
 return {
   default_prog = { 'wsl.exe' },
 
-  color_scheme = 'nord',
+  -- color_scheme = 'nord',
+  -- color_scheme = 'Monokai (base16)',
+  color_scheme = 'Gruvbox dark, medium (base16)',
 
   window_padding = {
     left = 0,
@@ -14,10 +16,10 @@ return {
   },
 
   font = wezterm.font(
-    'Source Code Pro',
+    'JetBrains Mono',
     {
       weight = 'Regular',
-      stretch = 'Normal',
+      stretch = 'Condensed',
       italic = false
     }
   ),
@@ -49,22 +51,22 @@ return {
     -- Adjust Pane Size
     {
       key = 'h',
-      mods = 'ALT|CTRL',
+      mods = 'ALT|SHIFT',
       action = act.AdjustPaneSize { 'Left', 1 }
     },
     {
       key = 'j',
-      mods = 'ALT|CTRL',
+      mods = 'ALT|SHIFT',
       action = act.AdjustPaneSize { 'Down', 1 }
     },
     {
       key = 'k',
-      mods = 'ALT|CTRL',
+      mods = 'ALT|SHIFT',
       action = act.AdjustPaneSize { 'Up', 1 }
     },
     {
       key = 'l',
-      mods = 'ALT|CTRL',
+      mods = 'ALT|SHIFT',
       action = act.AdjustPaneSize { 'Right', 1 }
     },
   }
