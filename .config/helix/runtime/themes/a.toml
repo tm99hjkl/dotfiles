@@ -17,9 +17,13 @@
 "markup" = "plain_fg"
 "markup.heading" = { fg = "#afffff", modifiers = ["bold"] }
 "markup.list" = "special"
-"diff" = "plain_fg"
+"markup.quote" = "#ffffff"
+"markup.bold" = "#ffffff"
+"markup.raw" = "#ffffff"
+"markup.raw.inline" = { bg = "#393939" }
+"diff" = "#777777"
 
-"ui.background" = { fg = "plain_fg", bg = "plain_bg" }
+"ui.background" = { fg = "plain_fg"}
 "ui.background.separator" = "plain_fg"
 "ui.cursor" = { fg = "plain_fg", modifiers = ["reversed"] }
 # "ui.cursor.normal" =
@@ -54,10 +58,10 @@
 "ui.text.focus" = { bg = "#444444" }
 "ui.text.inactive" = { fg = "#aaaaaa", bg = "plain_bg" }
 "ui.text.info" = { fg = "plain_fg", bg = "#222222" }
-"ui.virtual.ruler" = { bg = "plain_bg"}
+"ui.virtual.ruler" = { bg = "#393939" }
 # "ui.virtual.whitespace" =
 # "ui.virtual.indent-guide" =
-# "ui.virtual.inlay-hint" =
+"ui.virtual.inlay-hint" = "#888888"
 # "ui.virtual.inlay-hint.parameter" =
 # "ui.virtual.inlay-hint.type" =
 "ui.virtual.wrap" = "#777777"
