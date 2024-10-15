@@ -1,14 +1,15 @@
 "attribute" = "plain_fg"
 "type" = { fg = "#ffffff", modifiers = ["bold"] }
 "constructor" = "special"
-"constant" = "plain_fg"
+"constant" = "#afffff"
 "string" = "#afffff"
 "comment" = "#888888"
 "variable" = "plain_fg"
 "label" = "plain_fg"
 "punctuation" = "#888888"
 "keyword" = { fg = "#ffffff", modifiers = ["bold"] }
-"operator" = "#F92672"
+"operator" = { fg = "#ffffff", modifiers = ["bold"] }
+# "operator" = "#AA9FEE"
 "function" = { fg = "special", modifiers = ["bold"] }
 "function.builtin" = { fg = "special", modifiers = ["bold"] }
 "tag" = "plain_fg"
@@ -23,7 +24,7 @@
 "markup.raw.inline" = { bg = "#393939" }
 "diff" = "#777777"
 
-"ui.background" = { fg = "plain_fg"}
+"ui.background" = "plain_fg"
 "ui.background.separator" = "plain_fg"
 "ui.cursor" = { fg = "plain_fg", modifiers = ["reversed"] }
 # "ui.cursor.normal" =
@@ -78,11 +79,11 @@
 # "ui.cursorcolumn.secondary" =
 
 # "warning" =
-# "error" =
+"error" = "#F92672"
 # "info" =
 # "hint" =
 
-"diagnostic" = { bg = "plain_bg", modifiers = ["underlined"] }
+"diagnostic" = { bg = "plain_bg" }
 # "diagnostic.hint" =
 # "diagnostic.info" =
 # "diagnostic.warning" =
