@@ -1,97 +1,70 @@
-"attribute" = "plain_fg"
+"attribute" = "#f7e6c3"
+
 "type" = { fg = "#ffffff", modifiers = ["bold"] }
-"constructor" = "special"
+
+"constructor" = "#87ffaf"
+
 "constant" = "#afffff"
 "string" = "#afffff"
-"comment" = "#888888"
-"variable" = "plain_fg"
-"label" = "plain_fg"
+
+"comment" = "#8ec07c"
+
+"variable" = "#f7e6c3"
+"variable.parameter" = { fg = "#afffff" }
+"variable.builtin" = { fg = "#afffff" }
+
+"label" = "#f7e6c3"
+
 "punctuation" = "#888888"
-"keyword" = { fg = "#ffffff", modifiers = ["bold"] }
+
+"keyword" = { fg = "#ffffff", modifiers = ["bold", "italic"] }
+
 "operator" = { fg = "#ffffff", modifiers = ["bold"] }
-# "operator" = "#AA9FEE"
-"function" = { fg = "special", modifiers = ["bold"] }
-"function.builtin" = { fg = "special", modifiers = ["bold"] }
-"tag" = "plain_fg"
-"namespace" = "plain_fg"
-"special" = "plain_fg"
-"markup" = "plain_fg"
+
+"function" = { fg = "#87ffaf", modifiers = ["bold"] }
+"function.builtin" = { fg = "#87ffaf", modifiers = ["bold"] }
+
+"tag" = "#f7e6c3"
+
+"namespace" = "#f7e6c3"
+
+"markup" = "#f7e6c3"
 "markup.heading" = { fg = "#afffff", modifiers = ["bold"] }
-"markup.list" = "special"
+"markup.list" = "#87ffaf"
 "markup.quote" = "#ffffff"
-"markup.bold" = "#ffffff"
+"markup.bold" = { modifiers = ["underlined"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "#8ec07c", modifiers = ["underlined"] }
 "markup.raw" = "#ffffff"
 "markup.raw.inline" = { bg = "#393939" }
+
 "diff" = "#777777"
 
-"ui.background" = "plain_fg"
-"ui.background.separator" = "plain_fg"
-"ui.cursor" = { fg = "plain_fg", modifiers = ["reversed"] }
-# "ui.cursor.normal" =
-# "ui.cursor.insert" =
-# "ui.cursor.select" =
+"ui.background" = "#f7e6c3"
+"ui.background.separator" = "#f7e6c3"
+"ui.cursor" = { fg = "#f7e6c3", modifiers = ["reversed"] }
 "ui.cursor.match" = { fg = "#666666", modifiers = ["reversed"]}
-# "ui.cursor.primary" =
-# "ui.cursor.primary.normal" =
-# "ui.cursor.primary.insert" =
-# "ui.cursor.primary.select" =
-# "ui.debug.breakpoint" =
-# "ui.debug.active" =
-# "ui.gutter" =
-# "ui.gutter.selected" =
-# "ui.highlight.frameline" =
-"ui.linenr" = "#777777"
-"ui.linenr.selected" = "plain_fg"
-"ui.statusline" = { fg = "plain_fg", bg = "#222222" }
+"ui.linenr" = "#666666"
+"ui.linenr.selected" = "#ffffff"
+"ui.statusline" = { fg = "#ffffff", bg = "#222222", modifiers = ["bold"] }
 "ui.statusline.inactive" = { fg = "#777777", bg = "#222222" }
-# "ui.statusline.normal" =
-# "ui.statusline.insert" =
-# "ui.statusline.select" =
-# "ui.statusline.separator" =
-# "ui.bufferline" =
-# "ui.bufferline.active" =
-# "ui.bufferline.background" =
-"ui.popup" = { fg = "plain_fg", bg = "#222222" }
-"ui.popup.info" = { fg = "plain_fg", bg = "#222222"}
-"ui.window" = "plain_fg"
-"ui.help" = { fg = "plain_fg", bg = "#222222" }
-"ui.text" = "plain_fg"
+"ui.popup" = { fg = "#f7e6c3", bg = "#222222" }
+"ui.popup.info" = { fg = "#f7e6c3", bg = "#222222"}
+"ui.window" = "#f7e6c3"
+"ui.help" = { fg = "#f7e6c3", bg = "#222222" }
+"ui.text" = "#f7e6c3"
 "ui.text.focus" = { bg = "#444444" }
-"ui.text.inactive" = { fg = "#aaaaaa", bg = "plain_bg" }
-"ui.text.info" = { fg = "plain_fg", bg = "#222222" }
+"ui.text.inactive" = { fg = "#aaaaaa", bg = "#282828" }
+"ui.text.info" = { fg = "#f7e6c3", bg = "#222222" }
 "ui.virtual.ruler" = { bg = "#393939" }
-# "ui.virtual.whitespace" =
-# "ui.virtual.indent-guide" =
-"ui.virtual.inlay-hint" = "#888888"
-# "ui.virtual.inlay-hint.parameter" =
-# "ui.virtual.inlay-hint.type" =
+"ui.virtual.inlay-hint" = "#666666"
 "ui.virtual.wrap" = "#777777"
-# "ui.virtual.jump-label" =
-"ui.menu" = { fg = "plain_fg", bg = "#222222" }
-"ui.menu.selected" = { fg = "plain_fg", bg = "#444444" }
-# "ui.menu.scroll" =
+"ui.menu" = { fg = "#f7e6c3", bg = "#222222" }
+"ui.menu.selected" = { fg = "#f7e6c3", bg = "#444444" }
 "ui.selection" = { bg = "#444444" }
-# "ui.selection.primary" =
 "ui.highlight" = { bg = "#222222" }
-# "ui.cursorline.primary" =
-# "ui.cursorline.secondary" =
-# "ui.cursorcolumn.primary" =
-# "ui.cursorcolumn.secondary" =
 
-# "warning" =
-"error" = "#F92672"
-# "info" =
-# "hint" =
+"warning" = "#fabd2f"
+"error" = "#f92672"
 
-"diagnostic" = { bg = "plain_bg" }
-# "diagnostic.hint" =
-# "diagnostic.info" =
-# "diagnostic.warning" =
-# "diagnostic.error" =
-# "diagnostic.unnecessary" =
-# "diagnostic.deprecated" =
-
-[palette]
-plain_fg = "#f7e6c3"
-plain_bg = "#282828"
-special = "#98fb98"
+"diagnostic" = { bg = "#282828", modifiers = ["underlined"] }
