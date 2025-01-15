@@ -1,0 +1,99 @@
+"attribute" = "_white"
+
+"type" = { fg = "_lightcoral", modifiers = ["bold"] }
+
+"constructor" = { fg = "_lightcoral", modifiers = ["bold"] }
+
+"constant" = "_white"
+"string" = "_white"
+
+"comment" = "_grey"
+
+"variable" = "_white"
+
+"label" = "_white"
+
+"punctuation" = "_grey"
+
+"keyword" = { fg = "_lightgreen", modifiers = ["bold"] }
+
+"operator" = { fg = "_lightgreen", modifiers = ["bold"] }
+
+"function" = { fg = "_electricblue", modifiers = ["bold"] }
+
+"tag" = "_white"
+
+"namespace" = "_white"
+
+"markup" = "_white"
+"markup.heading" = { fg = "_electricblue", modifiers = ["bold"] }
+"markup.list" = "_lightgreen"
+"markup.quote" = "_white"
+"markup.bold" = { modifiers = ["underlined"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "_grey", modifiers = ["underlined"] }
+"markup.raw" = "_white"
+"markup.raw.inline" = { bg = "_grey" }
+
+"diff" = "_grey"
+
+"ui.background" = "_white"
+"ui.background.separator" = "_white"
+"ui.cursor" = { fg = "_white", modifiers = ["reversed"] }
+"ui.cursor.match" = { fg = "_grey", modifiers = ["reversed"]}
+"ui.linenr" = "_grey"
+"ui.linenr.selected" = "_white"
+"ui.statusline" = { fg = "_white", bg = "_black", modifiers = ["bold"] }
+"ui.statusline.inactive" = { fg = "_grey", bg = "_black" }
+"ui.popup" = { fg = "_white", bg = "_navy" }
+"ui.popup.info" = { fg = "_white", bg = "_black"}
+"ui.window" = "_white"
+"ui.help" = { fg = "_white", bg = "_black" }
+"ui.text" = "_white"
+"ui.text.focus" = { bg = "_grey" }
+"ui.text.inactive" = { fg = "_grey", bg = "_black" }
+"ui.text.info" = { fg = "_white", bg = "_black" }
+"ui.virtual.ruler" = { bg = "#222222" }
+"ui.virtual.inlay-hint" = "_grey"
+"ui.virtual.wrap" = "_grey"
+"ui.menu" = { fg = "_white", bg = "_black" }
+"ui.menu.selected" = { fg = "_white", bg = "_grey" }
+"ui.selection" = { bg = "_dodgerblue" }
+"ui.highlight" = { bg = "_black" }
+
+"warning" = "_witchhaze"
+"error" = "_witchhaze"
+"hint" = "_witchhaze"
+
+"diagnostic" = { modifiers = ["underlined"] }
+
+[palette]
+"_black"          = "#000000"
+"_darkblue"       = "#00007f"
+"_navy"           = "#0000ff"
+"_green"          = "#007f00"
+"_teal"           = "#007f7f"
+"_dodgerblue"     = "#007fff"
+"_lime"           = "#00ff00"
+"_springgreen"    = "#00ff7f"
+"_aqua"           = "#00ffff"
+
+"_maroon"         = "#7f0000"
+"_purple"         = "#7f007f"
+"_electricindigo" = "#7f00ff"
+"_olive"          = "#7f7f00"
+"_grey"           = "#7f7f7f"
+"_lightslateblue" = "#7f7fff"
+"_chartreuse"     = "#7fff00"
+"_lightgreen"     = "#7fff7f"
+"_electricblue"   = "#7fffff"
+
+"_red"            = "#ff0000"
+"_deeppink"       = "#ff007f"
+"_fuchsia"        = "#ff00ff"
+"_darkorange"     = "#ff7f00"
+"_lightcoral"     = "#ff7f7f"
+"_fuchsiapink"    = "#ff7fff"
+"_yellow"         = "#ffff00"
+"_witchhaze"      = "#ffff7f"
+"_white"          = "#ffffff"
