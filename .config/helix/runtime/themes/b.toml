@@ -5,7 +5,8 @@
 "constructor" = { fg = "_lightcoral", modifiers = ["bold"] }
 
 "constant" = "_white"
-"string" = "_white"
+
+"string" = "_witchhaze"
 
 "comment" = "_grey"
 
@@ -17,7 +18,7 @@
 
 "keyword" = { fg = "_lightgreen", modifiers = ["bold"] }
 
-"operator" = { fg = "_lightgreen", modifiers = ["bold"] }
+"operator" = { fg = "_white", modifiers = ["bold"] }
 
 "function" = { fg = "_electricblue", modifiers = ["bold"] }
 
@@ -26,14 +27,14 @@
 "namespace" = "_white"
 
 "markup" = "_white"
-"markup.heading" = { fg = "_electricblue", modifiers = ["bold"] }
-"markup.list" = "_lightgreen"
+"markup.heading" = { fg = "_lightcoral", modifiers = ["bold"] }
+"markup.list" = "_lightcoral"
 "markup.quote" = "_white"
 "markup.bold" = { modifiers = ["underlined"] }
 "markup.italic" = { modifiers = ["italic"] }
 "markup.link.url" = { fg = "_grey", modifiers = ["underlined"] }
 "markup.raw" = "_white"
-"markup.raw.inline" = { bg = "_grey" }
+"markup.raw.inline" = { bg = "_black" }
 
 "diff" = "_grey"
 
@@ -61,9 +62,9 @@
 "ui.selection" = { bg = "_dodgerblue" }
 "ui.highlight" = { bg = "_black" }
 
-"warning" = "_witchhaze"
-"error" = "_witchhaze"
-"hint" = "_witchhaze"
+"warning" = "_darkorange"
+"error" = "_darkorange"
+"hint" = "_darkorange"
 
 "diagnostic" = { modifiers = ["underlined"] }
 
