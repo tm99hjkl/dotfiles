@@ -8,7 +8,7 @@
 
 "string" = "_witchhaze"
 
-"comment" = "_grey"
+"comment" = "_lightgreen"
 
 "variable" = "_white"
 
@@ -16,7 +16,8 @@
 
 "punctuation" = "_grey"
 
-"keyword" = { fg = "_lightgreen", modifiers = ["bold"] }
+"keyword" = { fg = "_white", modifiers = ["bold"] }
+"keyword.storage.modifier" = { fg = "_lightcoral", modifiers = ["bold"]}
 
 "operator" = { fg = "_white", modifiers = ["bold"] }
 
@@ -46,7 +47,7 @@
 "ui.linenr.selected" = "_white"
 "ui.statusline" = { fg = "_white", bg = "_black", modifiers = ["bold"] }
 "ui.statusline.inactive" = { fg = "_grey", bg = "_black" }
-"ui.popup" = { fg = "_white", bg = "_navy" }
+"ui.popup" = { fg = "_white", bg = "#444444" }
 "ui.popup.info" = { fg = "_white", bg = "_black"}
 "ui.window" = "_white"
 "ui.help" = { fg = "_white", bg = "_black" }
@@ -57,6 +58,7 @@
 "ui.virtual.ruler" = { bg = "#222222" }
 "ui.virtual.inlay-hint" = "_grey"
 "ui.virtual.wrap" = "_grey"
+"ui.virtual.jump-label" = { fg = "_darkorange"}
 "ui.menu" = { fg = "_white", bg = "_black" }
 "ui.menu.selected" = { fg = "_white", bg = "_grey" }
 "ui.selection" = { bg = "_dodgerblue" }
