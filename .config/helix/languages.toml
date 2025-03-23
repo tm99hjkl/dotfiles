@@ -1,7 +1,12 @@
 [[language]]
 name = "c"
 indent = { tab-width = 8, unit = "        "}
-language-servers = []
+language-servers = [ { name = "clangd", except-features = [ "diagnostics" ] } ]
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 8, unit = "        "}
+language-servers = [ { name = "clangd", except-features = [ "diagnostics" ] } ]
 
 [[language]]
 name = "bash"
@@ -9,6 +14,28 @@ indent = { tab-width = 4, unit = "    " }
 auto-format = true
 
 [[language]]
+name = "markdown"
+text-width = 72
+soft-wrap = { enable = true, wrap-at-text-width = true }
+
+[[language]]
+name = "python"
+# language-servers = [ { name = "pylsp" } ]
+language-servers = [ { name = "pylsp" , except-features = [ "diagnostics" ] } ]
+
+# [[language]]
+# name = "haskell"
+# language-servers = [ { name = "haskell-language-server-9.6.6" } ] # , except-features = [ "completion", "diagnostics" ] } ]
+
+[[language]]
 name = "rust"
 auto-format = true
 
+[[language]]
+name = "latex"
+text-width = 72
+soft-wrap = { enable = true, wrap-at-text-width = true }
+
+# [[grammar]]
+# name = "haskell"
+# source = { git = "https://github.com/tree-sitter/tree-sitter-haskell", rev = "70ea0757986ea58a0d39ddfcd9d791beadeb0f43"}

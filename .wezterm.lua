@@ -7,6 +7,9 @@ return {
   -- color_scheme = 'nord',
   -- color_scheme = 'Monokai (base16)',
   color_scheme = 'Gruvbox dark, medium (base16)',
+  -- color_scheme = 'Apprentice (base16)',
+
+  window_background_opacity = 1.0,
 
   window_padding = {
     left = 0,

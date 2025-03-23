@@ -1,9 +1,11 @@
-theme = "nord"
+theme = "b"
 
 [editor]
 bufferline = "always"
-color-modes = true
-rulers = [80]
+true-color = true
+rulers = [72, 80]
+end-of-line-diagnostics = "hint"
+# line-number = "relative"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -16,10 +18,12 @@ hidden = false
 [editor.indent-guides]
 character = " "
 render = true
-skip-levels = 0
+
+[editor.inline-diagnostics]
+# cursor-line = "hint"
 
 [editor.lsp]
-display-inlay-hints = true
+# display-inlay-hints = true
 
 [editor.soft-wrap]
 enable = true
@@ -36,7 +40,9 @@ A-c = ":bc"
 [keys.insert]
 j = {k = "normal_mode"}
 C-f = "move_char_right"
+A-f = "move_next_word_start"
 C-b = "move_char_left"
+A-b = "move_prev_word_start"
 C-a = "goto_line_start"
 C-e = "goto_line_end"
 C-n = "move_visual_line_down"

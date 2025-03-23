@@ -17,7 +17,7 @@
 "punctuation" = "_grey"
 
 "keyword" = { fg = "_white", modifiers = ["bold"] }
-"keyword.storage.modifier" = { fg = "_lightcoral", modifiers = ["bold"]}
+"keyword.storage" = { fg = "_lightcoral", modifiers = ["bold"]}
 
 "operator" = { fg = "_white", modifiers = ["bold"] }
 
@@ -56,7 +56,7 @@
 "ui.text.inactive" = { fg = "_grey", bg = "_black" }
 "ui.text.info" = { fg = "_white", bg = "_black" }
 "ui.virtual.ruler" = { bg = "#222222" }
-"ui.virtual.inlay-hint" = "_grey"
+"ui.virtual.inlay-hint" = { fg = "_white", modifiers = ["italic"] }
 "ui.virtual.wrap" = "_grey"
 "ui.virtual.jump-label" = { fg = "_darkorange"}
 "ui.menu" = { fg = "_white", bg = "_black" }

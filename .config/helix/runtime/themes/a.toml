@@ -66,5 +66,6 @@
 
 "warning" = "#fabd2f"
 "error" = "#f92672"
+"hint" = "#777777"
 
 "diagnostic" = { bg = "#282828", modifiers = ["underlined"] }

@@ -106,7 +106,6 @@ if [ -f '/home/tm/google-cloud-sdk/path.bash.inc' ]; then . '/home/tm/google-clo
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/tm/google-cloud-sdk/completion.bash.inc' ]; then . '/home/tm/google-cloud-sdk/completion.bash.inc'; fi
 
-
 export PATH="$PATH:~/.config/composer/vendor/bin"
 export GOOGLE_APPLICATION_CREDENTIALS="/home/tm/prog/meteor/meteor-admin/service-account.json"
 
@@ -126,6 +125,9 @@ fi
 # setting for red
 export PATH="$PATH:~/opt"
 export PATH="$PATH:~/work/command"
+
+# setting for llvm
+export PATH="$PATH:~/opt/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04/bin"
 
 # cd
 # clear
@@ -155,3 +157,13 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=Nord'"
 
 # z
 . $HOME/ghq/github.com/rupa/z/z.sh
+
+# sage
+export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.10/site-packages/
+export PYTHONPATH=$PYTHONPATH:$HOME/memo/learn/web/CRYPTOHACK/
+
+shopt -s expand_aliases
+shopt -s autocd
+
+export EDITOR=hx
+export MEMO_EDITOR=hx
