@@ -69,5 +69,6 @@ ln -fs {$PWD,$HOME}/.bash_aliases
 ln -fs {$PWD,$HOME}/.config/helix/config.toml
 ln -fs {$PWD,$HOME}/.config/helix/languages.toml
 ln -fs {$PWD,$HOME}/.config/helix/runtime/themes/tm.toml
+ln -fs {$PWD,$HOME}/.inputrc
 
 echo done
