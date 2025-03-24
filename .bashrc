@@ -8,9 +8,6 @@ case $- in
       *) return;;
 esac
 
-# setting for ble.sh
-# [[ $- == *i* ]] && source ~/.local/share/blesh/ble.sh --noattach --inputrc=none
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -19,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=100000
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -28,7 +25,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-shopt -s globstar
+#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -46,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-# #force_color_prompt=yes
+#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -74,6 +71,31 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -94,76 +116,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f "/home/tm/.ghcup/env" ] && source "/home/tm/.ghcup/env" # ghcup-env
+################################################################################
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/tm/google-cloud-sdk/path.bash.inc' ]; then . '/home/tm/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/tm/google-cloud-sdk/completion.bash.inc' ]; then . '/home/tm/google-cloud-sdk/completion.bash.inc'; fi
-
-export PATH="$PATH:~/.config/composer/vendor/bin"
-export GOOGLE_APPLICATION_CREDENTIALS="/home/tm/prog/meteor/meteor-admin/service-account.json"
-
-# setting for ble.sh
-[[ ${BLE_VERSION-} ]] && ble-attach
-
-
-# setting for rbenv
-eval "$(~/.rbenv/bin/rbenv init - bash)"
-. "$HOME/.cargo/env"
-
-# setting for nix
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-    . $HOME/.nix-profile/etc/profile.d/nix.sh;
-fi
-
-# setting for red
-export PATH="$PATH:~/opt"
-export PATH="$PATH:~/work/command"
-
-# setting for llvm
-export PATH="$PATH:~/opt/clang+llvm-17.0.6-x86_64-linux-gnu-ubuntu-22.04/bin"
-
-# cd
-# clear
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-export PATH="$HOME/opt/nvim/bin:$HOME/opt/bin:$PATH"
-# export PYTHONSTARTUP=~/.pythonrc.py
-
-# Go
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:"$HOME/go/bin"
-
-# disable stopping terminal with ctrl-s
-stty stop undef
-stty start undef
-
-# not to erase the /slash/delimited/string at once on the command line
-stty werase undef
-bind '\C-w:unix-filename-rubout'
-
-# less
-export LESS='-R'
-
-# man
-export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=Nord'"
-
-# z
-. $HOME/ghq/github.com/rupa/z/z.sh
-
-# sage
-export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.10/site-packages/
-export PYTHONPATH=$PYTHONPATH:$HOME/memo/learn/web/CRYPTOHACK/
-
-shopt -s expand_aliases
 shopt -s autocd
 
-export EDITOR=hx
-export MEMO_EDITOR=hx
+# general
+export PATH="$PATH:$HOME/.local/bin:/usr/local/bin"
+
+# go
+export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
+
+# rust
+. "$HOME/.cargo/env"
+
+# rupa/z
+. ~/ghq/github.com/rupa/z/z.sh

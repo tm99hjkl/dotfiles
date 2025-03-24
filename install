@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+cd $(dirname $0)
+
+sudo apt update
+
+# build-essential
+sudo apt install build-essential
+
+# git
+sudo apt install git
+git config --global user.name "Takumi Matsuura"
+git config --global user.email "tm99hjkl@gmail.com"
+
+# curl
+sudo apt install curl
+
+# go
+if ! [ -f /usr/local/go/bin/go ]; then
+    curl -LO https://go.dev/dl/go1.24.1.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.24.1.linux-amd64.tar.gz
+    rm go1.24.1.linux-amd64.tar.gz
+fi
+
+# cargo
+if ! [ -f ~/.cargo/bin/cargo ]; then
+    curl https://sh.rustup.rs -sSf | sh
+fi
+
+# ghq
+/usr/local/go/bin/go install github.com/x-motemen/ghq@latest
+
+# lazygit
+/usr/local/go/bin/go install github.com/jesseduffield/lazygit@latest
+
+# helix
+~/go/bin/ghq get https://github.com/helix-editor/helix
+pushd ~/ghq/github.com/helix-editor/helix > /dev/null
+~/.cargo/bin/cargo install --path helix-term --locked
+mkdir -p ~/.config/helix/
+ln -Ts $PWD/runtime ~/.config/helix/runtime
+popd > /dev/null
+
+# cloc
+sudo apt install cloc
+
+# tree
+sudo apt install tree
+
+# xsel
+sudo apt install xsel
+
+# z
+~/go/bin/ghq get https://github.com/rupa/z
+
+# memo
+pushd ~ > /dev/null
+git clone git@github.com:tm99hjkllogseq/memo
+cd memo
+git config user.name "tm99hjkllogseq"
+git config user.email "tm99hjkllogseq@gmail.com"
+sudo ln -fs $PWD/memo /usr/local/bin/memo
+sudo ln -fs $PWD/task /usr/local/bin/task
+popd > /dev/null
+
+# dotfiles
+~/go/bin/ghq get git@github.com:tm99hjkl/dotfiles.git
+ln -fs {$PWD,$HOME}/.bashrc
+ln -fs {$PWD,$HOME}/.bash_aliases
+ln -fs {$PWD,$HOME}/.config/helix/config.toml
+ln -fs {$PWD,$HOME}/.config/helix/languages.toml
+ln -fs {$PWD,$HOME}/.config/helix/runtime/themes/tm.toml
+
+echo done
