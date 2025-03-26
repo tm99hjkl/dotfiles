@@ -47,7 +47,7 @@
 "ui.linenr.selected" = "_white"
 "ui.statusline" = { fg = "_white", bg = "_black", modifiers = ["bold"] }
 "ui.statusline.inactive" = { fg = "_grey", bg = "_black" }
-"ui.popup" = { fg = "_white", bg = "#444444" }
+"ui.popup" = { fg = "_white", bg = "_black" }
 "ui.popup.info" = { fg = "_white", bg = "_black"}
 "ui.window" = "_white"
 "ui.help" = { fg = "_white", bg = "_black" }

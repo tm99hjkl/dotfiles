@@ -1,9 +1,9 @@
 theme = "tm"
 
 [editor]
-bufferline = "always"
+bufferline = "never"
 true-color = true
-rulers = [72, 80]
+# rulers = [72, 80]
 end-of-line-diagnostics = "hint"
 # line-number = "relative"
 
@@ -50,4 +50,3 @@ C-p = "move_visual_line_up"
 A-q = ":bp"
 A-w = ":bn"
 A-c = ":bc"
-
