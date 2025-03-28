@@ -8,6 +8,7 @@ sudo apt install build-essential
 
 # git
 sudo apt install git
+ln -fs {$PWD,$HOME}/.gitconfig
 
 # curl
 sudo apt install curl
@@ -46,12 +47,19 @@ git pull
 mkdir -p ~/.config/helix/
 ln -Tfs $PWD/runtime ~/.config/helix/runtime
 popd > /dev/null
+ln -fs {$PWD,$HOME}/.config/helix/config.toml
+ln -fs {$PWD,$HOME}/.config/helix/languages.toml
+ln -fs {$PWD,$HOME}/.config/helix/runtime/themes/tm.toml
 
 # wireguard
 sudo apt install wireguard
 
 # cloc
 sudo apt install cloc
+
+# tmux
+sudo apt install tmux
+ln -fs {$PWD,$HOME}/.tmux.conf
 
 # tree
 sudo apt install tree
@@ -78,8 +86,4 @@ fi
 ~/go/bin/ghq get git@github.com:tm99hjkl/dotfiles.git
 ln -fs {$PWD,$HOME}/.bashrc
 ln -fs {$PWD,$HOME}/.bash_aliases
-ln -fs {$PWD,$HOME}/.config/helix/config.toml
-ln -fs {$PWD,$HOME}/.config/helix/languages.toml
-ln -fs {$PWD,$HOME}/.config/helix/runtime/themes/tm.toml
 ln -fs {$PWD,$HOME}/.inputrc
-ln -fs {$PWD,$HOME}/.gitconfig
