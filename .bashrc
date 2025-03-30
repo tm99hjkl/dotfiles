@@ -132,3 +132,7 @@ export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 
 # rupa/z
 . ~/ghq/github.com/rupa/z/z.sh
+
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach-session -t main || tmux new-session -s main
+fi
