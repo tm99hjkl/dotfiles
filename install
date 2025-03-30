@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -ex
-cd $(dirname $0)
 sudo apt update
 
 # build-essential
@@ -8,6 +7,8 @@ sudo apt install build-essential
 
 # git
 sudo apt install git
+git clone git@github.com:tm99hjkl/dotfiles ~/ghq/github.com/tm99hjkl/dotfiles || true
+cd ~/ghq/github.com/tm99hjkl/dotfiles
 ln -fs {$PWD,$HOME}/.gitconfig
 
 # curl
@@ -96,8 +97,7 @@ if ! [ -d ~/memo ]; then
     popd > /dev/null
 fi
 
-# dotfiles
-~/go/bin/ghq get git@github.com:tm99hjkl/dotfiles.git
+# other dotfiles
 ln -fs {$PWD,$HOME}/.bashrc
 ln -fs {$PWD,$HOME}/.bash_aliases
 ln -fs {$PWD,$HOME}/.inputrc
