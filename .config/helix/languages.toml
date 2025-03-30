@@ -9,11 +9,6 @@ indent = { tab-width = 8, unit = "        "}
 language-servers = [ { name = "clangd", except-features = [ "diagnostics" ] } ]
 
 [[language]]
-name = "cpp"
-indent = { tab-width = 8, unit = "        "}
-language-servers = [ { name = "clangd", except-features = [ "diagnostics" ] } ]
-
-[[language]]
 name = "latex"
 text-width = 72
 soft-wrap = { enable = true, wrap-at-text-width = true }
@@ -26,7 +21,3 @@ soft-wrap = { enable = true, wrap-at-text-width = true }
 [[language]]
 name = "python"
 language-servers = [ { name = "pylsp" , except-features = [ "diagnostics" ] } ]
-
-[[language]]
-name = "rust"
-auto-format = true
