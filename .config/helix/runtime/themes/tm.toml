@@ -44,7 +44,7 @@
 "ui.cursor" = { fg = "_white", modifiers = ["reversed"] }
 "ui.cursor.match" = { fg = "_grey", modifiers = ["reversed"]}
 "ui.linenr" = "_grey"
-"ui.linenr.selected" = "_white"
+"ui.linenr.selected" = { fg = "_white", modifiers = ["bold"] }
 "ui.statusline" = { fg = "_white", bg = "_black", modifiers = ["bold"] }
 "ui.statusline.inactive" = { fg = "_grey", bg = "_black" }
 "ui.popup" = { fg = "_white", bg = "_black" }
@@ -60,9 +60,9 @@
 "ui.virtual.wrap" = "_grey"
 "ui.virtual.jump-label" = { fg = "_darkorange"}
 "ui.menu" = { fg = "_white", bg = "_black" }
-"ui.menu.selected" = { fg = "_white", bg = "_grey" }
+"ui.menu.selected" = { fg = "_white", bg = "_dodgerblue" }
 "ui.selection" = { bg = "_dodgerblue" }
-"ui.highlight" = { bg = "_black" }
+"ui.highlight" = { bg = "_dodgerblue" }
 
 "warning" = "_darkorange"
 "error" = "_darkorange"
