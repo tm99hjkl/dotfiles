@@ -63,6 +63,8 @@ ln -fs {$PWD,$HOME}/.config/helix/config.toml
 ln -fs {$PWD,$HOME}/.config/helix/languages.toml
 ln -fs {$PWD,$HOME}/.config/helix/runtime/themes/tm.toml
 ~/.cargo/bin/rustup component add rust-analyzer
+sudo apt install clangd-19
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-19 100
 sudo snap install marksman
 sudo apt install python3-pylsp
 
