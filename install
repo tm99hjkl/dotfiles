@@ -87,6 +87,14 @@ sudo apt install xsel
 # z
 ~/go/bin/ghq get https://github.com/rupa/z
 
+# ghidra
+if ! [ -f /usr/local/bin/ghidra ]; then
+    sudo apt install openjdk-21-jdk
+    wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3.1_build/ghidra_11.3.1_PUBLIC_20250219.zip
+    sudo unzip wget ghidra_11.3.1_PUBLIC_20250219.zip -d /opt && rm ghidra_11.3.1_PUBLIC_20250219.zip
+    sudo ln -sf /opt/ghidra_11.3.1_PUBLIC/ghidraRun /usr/local/bin/ghidra
+fi
+
 # memo
 if ! [ -d ~/memo ]; then
     pushd ~ > /dev/null
