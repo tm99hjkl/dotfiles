@@ -25,7 +25,7 @@
 
 "tag" = "_white"
 
-"namespace" = "_white"
+"namespace" = "_grey"
 
 "markup" = "_white"
 "markup.heading" = { fg = "_lightcoral", modifiers = ["bold"] }
@@ -52,7 +52,7 @@
 "ui.window" = "_white"
 "ui.help" = { fg = "_white", bg = "_black" }
 "ui.text" = "_white"
-"ui.text.focus" = { bg = "_grey" }
+"ui.text.focus" = { bg = "_dodgerblue" }
 "ui.text.inactive" = { fg = "_grey", bg = "_black" }
 "ui.text.info" = { fg = "_white", bg = "_black" }
 "ui.virtual.ruler" = { bg = "_black" }
