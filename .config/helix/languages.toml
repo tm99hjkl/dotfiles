@@ -15,9 +15,13 @@ soft-wrap = { enable = true, wrap-at-text-width = true }
 
 [[language]]
 name = "markdown"
-text-width = 72
+text-width = 80
 soft-wrap = { enable = true, wrap-at-text-width = true }
 
 [[language]]
 name = "python"
 language-servers = [ { name = "pylsp" , except-features = [ "diagnostics" ] } ]
+
+# [[language]]
+# name = "rust"
+# language-servers = [ { name = "rust-analyzer" , except-features = [ "diagnostics" ] } ]

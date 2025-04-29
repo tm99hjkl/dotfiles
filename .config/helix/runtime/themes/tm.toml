@@ -56,7 +56,7 @@
 "ui.text.inactive" = { fg = "_grey", bg = "_black" }
 "ui.text.info" = { fg = "_white", bg = "_black" }
 "ui.virtual.ruler" = { bg = "_black" }
-"ui.virtual.inlay-hint" = { fg = "_white", modifiers = ["italic"] }
+"ui.virtual.inlay-hint" = { fg = "_grey", modifiers = ["italic"] }
 "ui.virtual.wrap" = "_grey"
 "ui.virtual.jump-label" = { fg = "_darkorange"}
 "ui.menu" = { fg = "_white", bg = "_black" }

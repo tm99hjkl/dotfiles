@@ -20,10 +20,11 @@ character = " "
 render = true
 
 [editor.inline-diagnostics]
-# cursor-line = "hint"
+cursor-line = "hint"
+other-lines = "hint"
 
 [editor.lsp]
-# display-inlay-hints = true
+display-inlay-hints = true
 
 [editor.soft-wrap]
 enable = true
