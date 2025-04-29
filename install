@@ -111,3 +111,4 @@ fi
 ln -fs {$PWD,$HOME}/.bashrc
 ln -fs {$PWD,$HOME}/.bash_aliases
 ln -fs {$PWD,$HOME}/.inputrc
+ln -fs {$PWD,$HOME}/.vimrc
