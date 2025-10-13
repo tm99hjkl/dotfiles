@@ -1,7 +1,7 @@
-theme = "tm"
+theme = "cyan_light"
 
 [editor]
-bufferline = "never"
+bufferline = "always"
 true-color = true
 # rulers = [72, 80]
 end-of-line-diagnostics = "hint"
@@ -34,20 +34,20 @@ C-h = "jump_view_left"
 C-j = "jump_view_down"
 C-k = "jump_view_up"
 C-l = "jump_view_right"
-A-q = ":bp"
-A-w = ":bn"
+A-a = ":bp"
+A-s = ":bn"
 A-c = ":bc"
 
 [keys.insert]
 j = {k = "normal_mode"}
 C-f = "move_char_right"
-A-f = "move_next_word_start"
+A-f = ["move_next_word_start", "move_char_right"]
 C-b = "move_char_left"
 A-b = "move_prev_word_start"
 C-a = "goto_line_start"
-C-e = "goto_line_end"
+C-e = ["goto_line_end", "move_char_right"]
 C-n = "move_visual_line_down"
 C-p = "move_visual_line_up"
-A-q = ":bp"
-A-w = ":bn"
+A-a = ":bp"
+A-s = ":bn"
 A-c = ":bc"
