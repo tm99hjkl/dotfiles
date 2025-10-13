@@ -6,7 +6,7 @@ CARGO := $$HOME/.cargo/bin/cargo
 RUSTUP := $$HOME/.cargo/bin/rustup
 MOLD := /usr/local/bin/mold
 
-all: docker lazygit uv z helix ghidra misc
+all: docker lazygit uv z helix radare2 can ghidra misc
 
 setup:
 	sudo apt update
@@ -80,6 +80,25 @@ helix: ghq mold cargo dotfiles
 	sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-19 100
 	sudo snap install marksman
 	sudo apt install -y python3-pylsp
+
+radare2: ghq
+	$(GHQ) get https://github.com/radareorg/radare2
+	cd $$($(GHQ) root)/github.com/radareorg/ && \
+	radare2/sys/install.sh
+	r2pm -U
+	r2pm -ci r2ghidra
+
+can: can-utils caringcaribou
+
+can-utils: ghq
+	$(GHQ) get https://github.com/linux-can/can-utils
+	cd $$($(GHQ) root)/github.com/linux-can/can-utils && \
+	make && sudo make install
+
+caringcaribou: ghq
+	$(GHQ) get https://github.com/CaringCaribou/caringcaribou
+	cd $$($(GHQ) root)/github.com/CaringCaribou/caringcaribou && \
+	python setup.py install
 
 ghidra:
 	if ! [ -f /usr/local/bin/ghidra ]; then \
