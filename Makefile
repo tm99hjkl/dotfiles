@@ -46,7 +46,7 @@ lazygit: go
 mold: ghq
 	if ! [ -f $(MOLD) ]; then \
 		$(GHQ) get --branch stable https://github.com/rui314/mold.git; \
-		cd $$HOME/ghq/github.com/rui314/mold && \
+		cd $$($(GHQ) root)/github.com/rui314/mold && \
 		sudo ./install-build-deps.sh && \
 		cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=c++ -B build && \
 		cmake --build build -j$$(nproc) && \
@@ -55,7 +55,7 @@ mold: ghq
 
 dotfiles: ghq
 	$(GHQ) get https://github.com/tm99hjkl/dotfiles
-	cd $$HOME/ghq/github.com/tm99hjkl/dotfiles && \
+	cd $$($(GHQ) root)/github.com/tm99hjkl/dotfiles && \
 	ln -fs {$$PWD,$$HOME}/.bashrc && \
 	ln -fs {$$PWD,$$HOME}/.bash_aliases && \
 	ln -fs {$$PWD,$$HOME}/.inputrc && \
@@ -66,12 +66,12 @@ z: dotfiles ghq
 
 helix: ghq mold cargo dotfiles
 	$(GHQ) get https://github.com/helix-editor/helix
-	cd $$HOME/ghq/github.com/helix-editor/helix && \
+	cd $$($(GHQ) root)/github.com/helix-editor/helix && \
 	git pull && \
 	mold -run $(CARGO) install --path helix-term --locked && \
 	mkdir -p $$HOME/.config/helix/ && \
 	ln -Tfs $${PWD}/runtime $$HOME/.config/helix/runtime
-	cd $$HOME/ghq/github.com/tm99hjkl/dotfiles && \
+	cd $$($(GHQ) root)/github.com/tm99hjkl/dotfiles && \
 	ln -fs {$$PWD,$$HOME}/.config/helix/config.toml && \
 	ln -fs {$$PWD,$$HOME}/.config/helix/languages.toml && \
 	ln -fs {$$PWD,$$HOME}/.config/helix/runtime/themes/tm.toml
@@ -107,5 +107,5 @@ private: dotfiles
 		sudo ln -fs $$PWD/memo /usr/local/bin/memo && \
 		sudo ln -fs $$PWD/task /usr/local/bin/task; \
 	fi
-	cd $$HOME/ghq/github.com/tm99hjkl/dotfiles && \
+	cd $$($(GHQ) root)/github.com/tm99hjkl/dotfiles && \
 	ln -fs {$$PWD,$$HOME}/.gitconfig
