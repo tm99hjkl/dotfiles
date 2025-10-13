@@ -128,11 +128,19 @@ export PATH="$PATH:$HOME/.local/bin:/usr/local/bin"
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 
 # rust
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # rupa/z
-. ~/ghq/github.com/rupa/z/z.sh
+[ -f "~/ghq/github.com/rupa/z/z.sh" ] && . "~/ghq/github.com/rupa/z/z.sh"
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach-session -t main || tmux new-session -s main
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PYTHONPATH=~/.venv/lib/python3.12/site-packages:$PYTHONPATH
+
+export PATH="$PATH:/home/tm/.venv/bin"

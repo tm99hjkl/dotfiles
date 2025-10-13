@@ -5,6 +5,8 @@ GHQ := $$HOME/go/bin/ghq
 CARGO := $$HOME/.cargo/bin/cargo
 RUSTUP := $$HOME/.cargo/bin/rustup
 MOLD := /usr/local/bin/mold
+UV := $$HOME/.local/bin/uv
+PYTHON := $$HOME/.venv/bin/python
 
 all: docker lazygit uv z helix radare2 can ghidra misc
 
@@ -12,8 +14,12 @@ setup:
 	sudo apt update
 	sudo apt install -y gcc g++ git curl
 	mkdir -p $$HOME/ghq/github.com/tm99hjkl
-	git clone https://github.com/tm99hjkl/dotfiles $$HOME/ghq/github.com/tm99hjkl/dotfiles
-	cd $$($(GHQ) root)/github.com/tm99hjkl/dotfiles && \
+	if ! [ -d $$HOME/ghq/github.com/tm99hjkl/dotfiles ]; then \
+		git clone https://github.com/tm99hjkl/dotfiles $$HOME/ghq/github.com/tm99hjkl/dotfiles; \
+	else \
+		cd $$HOME/ghq/github.com/tm99hjkl/dotfiles && git pull; \
+	fi
+	cd $$HOME/ghq/github.com/tm99hjkl/dotfiles && \
 	ln -fs {$$PWD,$$HOME}/.bashrc && \
 	ln -fs {$$PWD,$$HOME}/.bash_aliases && \
 	ln -fs {$$PWD,$$HOME}/.inputrc && \
@@ -41,6 +47,7 @@ cargo: setup
 
 uv: setup
 	curl -LsSf https://astral.sh/uv/install.sh | sh
+	if ! [ -d $$HOME/.venv ]; then cd $$HOME && $(UV) venv; fi
 
 ghq: go
 	if ! [ -f $(GHQ) ]; then \
@@ -102,10 +109,11 @@ can-utils: ghq
 	cd $$($(GHQ) root)/github.com/linux-can/can-utils && \
 	make && sudo make install
 
-caringcaribou: ghq
+caringcaribou: ghq uv
+	$(UV) pip install setuptools python-can
 	$(GHQ) get https://github.com/CaringCaribou/caringcaribou
 	cd $$($(GHQ) root)/github.com/CaringCaribou/caringcaribou && \
-	python setup.py install
+	$(PYTHON) setup.py install
 
 ghidra:
 	if ! [ -f /usr/local/bin/ghidra ]; then \
