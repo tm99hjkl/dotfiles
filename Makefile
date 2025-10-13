@@ -11,6 +11,13 @@ all: docker lazygit uv z helix radare2 can ghidra misc
 setup:
 	sudo apt update
 	sudo apt install -y gcc g++ git curl
+	mkdir -p $$HOME/ghq/github.com/tm99hjkl
+	git clone https://github.com/tm99hjkl/dotfiles $$HOME/ghq/github.com/tm99hjkl/dotfiles
+	cd $$($(GHQ) root)/github.com/tm99hjkl/dotfiles && \
+	ln -fs {$$PWD,$$HOME}/.bashrc && \
+	ln -fs {$$PWD,$$HOME}/.bash_aliases && \
+	ln -fs {$$PWD,$$HOME}/.inputrc && \
+	ln -fs {$$PWD,$$HOME}/.vimrc
 
 docker: setup
 	sudo apt install -y ca-certificates
@@ -64,7 +71,7 @@ dotfiles: ghq
 z: dotfiles ghq
 	$(GHQ) get https://github.com/rupa/z
 
-helix: ghq mold cargo dotfiles
+helix: ghq mold cargo
 	$(GHQ) get https://github.com/helix-editor/helix
 	cd $$($(GHQ) root)/github.com/helix-editor/helix && \
 	git pull && \
@@ -116,7 +123,7 @@ misc:
 
 ### My private setting. This recipe is not included in `all`.
 
-private: dotfiles
+private: ghq
 	if ! [ -d ~/memo ]; then \
 		cd ~ && \
 		git clone git@github.com:tm99hjkllogseq/memo; \
