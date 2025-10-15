@@ -131,7 +131,7 @@ export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # rupa/z
-[ -f "~/ghq/github.com/rupa/z/z.sh" ] && . "~/ghq/github.com/rupa/z/z.sh"
+[ -f "$HOME/ghq/github.com/rupa/z/z.sh" ] && . "$HOME/ghq/github.com/rupa/z/z.sh"
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach-session -t main || tmux new-session -s main
