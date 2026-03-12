@@ -1,31 +1,32 @@
 "attribute" = "_white"
 
+# "type" = { fg = "_white", modifiers = ["bold"] }
 "type" = { fg = "_lightcoral", modifiers = ["bold"] }
 
 "constructor" = { fg = "_lightcoral", modifiers = ["bold"] }
 
-"constant" = "_white"
+"constant" = "_lightgreen"
 
-"string" = "_witchhaze"
+"string" = "_lightgreen"
 
-"comment" = "_lightgreen"
+"comment" = "_grey"
 
 "variable" = "_white"
 
 "label" = "_white"
 
-"punctuation" = "_grey"
+"punctuation" = "_white"
 
-"keyword" = { fg = "_white", modifiers = ["bold"] }
+"keyword" = { fg = "_electricblue", modifiers = ["bold"] }
 "keyword.storage" = { fg = "_lightcoral", modifiers = ["bold"]}
 
-"operator" = { fg = "_white", modifiers = ["bold"] }
+"operator" = { fg = "_white", modifiers = [] }
 
-"function" = { fg = "_electricblue", modifiers = ["bold"] }
+"function" = { fg = "_white", modifiers = ["bold"] }
 
 "tag" = "_white"
 
-"namespace" = "_grey"
+"namespace" = "_white"
 
 "markup" = "_white"
 "markup.heading" = { fg = "_lightcoral", modifiers = ["bold"] }
@@ -48,13 +49,13 @@
 "ui.statusline" = { fg = "_white", bg = "_black", modifiers = ["bold"] }
 "ui.statusline.inactive" = { fg = "_grey", bg = "_black" }
 "ui.popup" = { fg = "_white", bg = "_black" }
-"ui.popup.info" = { fg = "_white", bg = "_black"}
+"ui.popup.info" = "_white"
 "ui.window" = "_white"
-"ui.help" = { fg = "_white", bg = "_black" }
+"ui.help" = "_white"
 "ui.text" = "_white"
-"ui.text.focus" = { bg = "_dodgerblue" }
+"ui.text.focus" = { modifiers = ["bold", "italic"] }
 "ui.text.inactive" = { fg = "_grey", bg = "_black" }
-"ui.text.info" = { fg = "_white", bg = "_black" }
+"ui.text.info" = "_white"
 "ui.virtual.ruler" = { bg = "_black" }
 "ui.virtual.inlay-hint" = { fg = "_grey", modifiers = ["italic"] }
 "ui.virtual.wrap" = "_grey"
@@ -64,9 +65,9 @@
 "ui.selection" = { bg = "_dodgerblue" }
 "ui.highlight" = { bg = "_dodgerblue" }
 
-"warning" = "_darkorange"
-"error" = "_darkorange"
-"hint" = "_darkorange"
+"warning" = "_yellow"
+"error" = "_red"
+"hint" = "_lime"
 
 "diagnostic" = { modifiers = ["underlined"] }
 
